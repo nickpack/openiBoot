@@ -430,12 +430,12 @@ void boot_linux_from_files()
 
 	set_kernel((void*) 0x09000000, size);
 
-	bufferPrintf("Loading android image...\r\n");
+	bufferPrintf("Loading ramdisk image...\r\n");
 
-	size = fs_extract(1, "/idroid/android.img.gz", (void*) 0x09000000);
+	size = fs_extract(1, "/idroid/ramdisk.img", (void*) 0x09000000);
 	if(size < 0)
 	{
-		bufferPrintf("Cannot find android.img.gz.\r\n");
+		bufferPrintf("Cannot find ramdisk.img.\r\n");
 		return;
 	}
 
